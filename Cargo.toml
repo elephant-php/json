@@ -1,0 +1,18 @@
+[package]
+name = "elephant_json"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+name = "elephant_json"
+
+[dependencies]
+ext-php-rs = "0.14.2"
+serde_json = "1.0"
+
+[profile.release]
+strip = "debuginfo"
+lto = true
+opt-level = 3
+codegen-units = 1
